@@ -1,0 +1,113 @@
+@import "src/sass/mixins";
+
+.section {
+	@include section;
+	height: auto;
+	padding-top: 150px;
+	padding-inline: 100px;
+	padding-bottom: 0 !important;
+
+	>p {
+		font-size: 12px;
+	}
+
+	@media (max-width: 425px) {
+		padding-top: 150px;
+		padding-inline: 0;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		padding-top: 150px;
+	}
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+		padding-top: 150px;
+	}
+}
+
+.title_w {
+	margin-bottom: 35px;
+
+	h3 {
+		font-size: 35px;
+	}
+
+	h2 {
+		font-size: 25px;
+	}
+
+	@media (max-width: 425px) {
+		padding-inline: 15px;
+	}
+}
+
+.content {
+	width: 100%;
+	height: auto;
+	min-height: 100vh;
+	background-color: var(--txt);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	overflow: auto;
+	padding-bottom: 50px;
+}
+
+.filterBar {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 20px;
+}
+
+.filter,
+.activeFilter {
+	font-size: 14px;
+	padding: 5px;
+	padding-inline: 10px;
+	margin-block: 5px;
+	margin-inline: 10px;
+	border-radius: 5px;
+	text-transform: capitalize;
+	color: var(--txt);
+	border: 1px solid var(--bg);
+	background-color: var(--bg);
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.activeFilter {
+	position: relative;
+
+	&::after {
+		content: "";
+		background-color: var(--bg);
+		background-image: url("/src/assets/svg icons/close_icon.svg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 60%;
+		height: 15px;
+		width: 15px;
+		position: absolute;
+		top: -7.5px;
+		right: -7.5px;
+		// padding: 5px;
+		border-radius: 50%;
+	}
+}
+
+.filter:hover,
+.activeFilter {
+	color: var(--bg);
+	border: 1px solid var(--bg);
+	background-color: var(--cta-bg);
+}
+
+.line {
+	@include line;
+	background-color: var(--bg);
+	width: auto;
+	max-width: 100%;
+	margin: 0;
+}

@@ -1,0 +1,204 @@
+@import "src/sass/mixins";
+
+:root {
+	font-family: "Commissioner", sans-serif;
+
+	line-height: 1.5;
+	font-weight: 400;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+
+	--bg: #f5f8fa;
+	--bg-secondary: #1a1b1d;
+	--txt: #1a1b1d;
+	--txt-secondary: #f5f8fa;
+	--card-bg: #1a1b1d;
+	--card-txt: #f5f8fa;
+	--cta-bg: #1da1f2;
+	--cta-bg-hover: #f5f8fa;
+	--cta-txt: #f5f8fa;
+	--cta-txt-hover: #1a1b1d;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	background-color: var(--bg);
+	color: var(--txt);
+	width: 100vw;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+p {
+	text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Fraunces", serif;
+}
+
+a {
+	color: var(--card-txt);
+	text-decoration: none;
+}
+
+li {
+	display: inline-block;
+	list-style-type: none;
+}
+
+button {
+	background-color: var(--cta-bg-hover);
+	border-style: solid;
+	border-color: var(--cta-txt);
+
+	&:hover,
+	&:focus {
+		background-color: var(--cta-bg);
+		border-color: var(--cta-bg-hover);
+		color: var(--cta-txt);
+	}
+}
+
+input,
+textarea {
+	width: 100%;
+	border: 1px solid transparent;
+	border-radius: 0px;
+	border-bottom-color: var(--cta-bg);
+	background-color: transparent;
+	color: var(--bg);
+	padding: 10px;
+	resize: none;
+	/* for textarea only? */
+	overflow: scroll;
+	/* for textarea only? */
+
+	&:focus,
+	&:active {
+		outline: 1px solid var(--cta-bg);
+	}
+}
+
+label.error {
+	input,
+	textarea {
+		border: 1px solid red;
+	}
+}
+
+.noScroll {
+	overflow: hidden;
+}
+
+h1 {
+	@media (max-width: 425px) {
+		font-size: 40px;
+	}
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+		font-size: 65px;
+	}
+
+	@media (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 60px;
+	}
+
+	@media (min-width: 1441px) {
+		font-size: 80px;
+	}
+}
+
+h3 {
+	@media (max-width: 425px) {
+		font-size: 20px;
+	}
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+		font-size: 25px;
+	}
+
+	@media (min-width: 1025px) and (max-width: 1440px) {
+		font-size: 25px;
+	}
+
+	@media (min-width: 1441px) {
+		font-size: 40px;
+	}
+}
+
+p {
+	@media (max-width: 425px) {
+		font-size: 12px;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		font-size: 14px;
+	}
+
+	@media (min-width: 1441px) {
+		font-size: 20px;
+	}
+}
+
+::placeholder {
+	color: white;
+	font-size: 14px;
+
+	@media (max-width:425px) {
+		font-size: 12px;
+	}
+}
+
+
+// style of resume cta in nav
+.cta {
+	background-color: var(--cta-bg);
+	color: var(--txt-secondary);
+	border: 1px solid var(--bg);
+	border-radius: 10px;
+	font-size: 16px;
+	padding: 10px 20px;
+
+	&:hover {
+		background-color: #0B75B6;
+		cursor: pointer;
+		color: var(--txt-secondaryg);
+		border: 1px solid var(--cta-bg);
+	}
+}

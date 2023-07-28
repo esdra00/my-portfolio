@@ -1,0 +1,47 @@
+.carousel {
+   // display: flex;
+   // flex-wrap: wrap;
+   // gap: 15px;
+   // width: auto;
+   padding-block: 50px;
+   overflow: hidden;
+
+}
+
+.container_car {
+   margin: 0 auto;
+   // 1550px
+   width: calc(387.5px * 4);
+   position: relative;
+   // left: -165px;
+
+
+   @media (max-width: 425px) {
+      width: calc(200px * 4);
+   }
+}
+
+.row {
+   display: flex;
+   flex-wrap: wrap;
+
+}
+
+.carousel_img {
+   padding: 1.25vw;
+   width: 23%;
+   display: flex;
+   // height: 200px;
+
+   // width: 330px;
+   // background-color: var(--txt);
+   img {
+      height: auto;
+      width: 100%;
+      aspect-ratio: auto;
+      // border: 1px solid black;
+      // padding: 1.25vw;
+      background-color: #d3d3d3;
+      border-radius: 5px;
+   }
+}

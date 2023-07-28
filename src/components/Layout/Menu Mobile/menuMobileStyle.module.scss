@@ -1,0 +1,180 @@
+@import "src/sass/mixins";
+
+.menu {
+	@include section;
+	position: fixed;
+	inset: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	margin-left: 100%;
+	padding-top: 150px !important;
+
+	background-color: var(--bg-secondary);
+	color: var(--txt-secondary);
+	overflow: hidden;
+	z-index: 10;
+
+	transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	@media (max-width: 425px) {
+		padding-inline: 30px;
+		padding-top: 100px !important;
+		padding-bottom: 20px;
+	}
+
+	@media (min-width: 426px) {
+		display: none;
+	}
+}
+
+.open {
+	margin-left: 0%;
+	transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.title {
+	@include titleSection(15px);
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 15px;
+	font-weight: lighter;
+
+	&:nth-of-type(2) {
+		flex-direction: column-reverse;
+	}
+
+	h6 {
+		font-size: 10px;
+		font-weight: normal;
+	}
+
+	.line {
+		@include line;
+		margin: 0 !important;
+		background-color: var(--bg);
+	}
+}
+
+.iconsWrapper {
+	display: flex;
+	justify-content: flex-start;
+	gap: 25px;
+}
+
+.linkSocial {
+	height: 45px;
+	width: 45px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 25px;
+	background-color: var(--bg);
+
+	a {
+		height: 25px;
+		width: 25px;
+	}
+
+	svg {
+		height: 25px;
+		width: 25px;
+		margin: auto;
+
+		path {
+			fill: var(--txt);
+		}
+	}
+}
+
+// Menu Mobile Button
+// Menu Mobile Button
+// Menu Mobile Button
+@mixin btn {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	font-size: 2.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	border-radius: 50%;
+	cursor: pointer;
+	background-size: 100% 200%;
+	background-position: 0% 100%;
+	color: #fff;
+	transition: 400ms;
+	background-color: var(--cta-bg);
+	box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.04);
+
+	&:hover {
+		box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.04);
+	}
+}
+
+@mixin btnIconDef {
+	position: absolute;
+	width: 20px;
+	height: 0.23rem;
+	border-radius: 2px;
+	background-color: rgba(255, 255, 255, 1);
+	display: block;
+	margin: auto;
+	transition: 400ms;
+}
+
+.btn_cont {
+	@media (min-width: 426px) {
+		display: none;
+	}
+}
+
+.main_btn {
+	@include btn;
+	transform: rotate(0deg);
+	opacity: 1;
+	z-index: 20;
+
+	@media (min-width: 426px) {
+		display: none;
+	}
+}
+
+.custom_menu_toggle {
+	@include btnIconDef;
+
+	&:before {
+		@include btnIconDef;
+		content: "";
+		backface-visibility: hidden;
+		transform: rotate(0deg) translateY(10px);
+	}
+
+	&:after {
+		@include btnIconDef;
+		content: "";
+		backface-visibility: hidden;
+		transform: rotate(0deg) translateY(-10px);
+	}
+}
+
+.main_btn.active .custom_menu_toggle {
+	background-color: rgba(255, 255, 255, 0);
+
+	&:before {
+		@include btnIconDef;
+		content: "";
+		transform: rotate(45deg) translateY(0px);
+	}
+
+	&:after {
+		@include btnIconDef;
+		content: "";
+		transform: rotate(-45deg) translateY(0px);
+	}
+}

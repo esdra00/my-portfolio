@@ -1,0 +1,161 @@
+@import "src/sass/mixins";
+
+.section {
+	@include section;
+	padding: 150px;
+
+	@media (max-width: 425px) {
+		padding-inline: 50px;
+		padding-block: 150px;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		padding-inline: 30px;
+		padding-top: 120px;
+		padding-bottom: 20px;
+	}
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+		padding-inline: 100px;
+		padding-top: 120px;
+		padding-bottom: 20px;
+
+		h1 {
+			font-size: 50px;
+		}
+	}
+}
+
+.container {
+	@include container(row);
+	padding: 0;
+	gap: 25px;
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+	}
+}
+
+.txt_w {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+
+	@media (max-width: 768px) {
+		text-align: center;
+		align-items: center;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		gap: 20px;
+	}
+}
+
+.txt_w,
+.image_w {
+	flex: 1;
+	height: 100%;
+	width: 100%;
+}
+
+.image_w {
+	// flex: 0.8;
+	text-align: center;
+	max-width: 45%;
+
+	@media (max-width: 425px) {
+		display: none;
+	}
+}
+
+.image {
+	@include image;
+	height: auto;
+	width: auto;
+	max-width: 100%;
+	max-height: 100%;
+
+	border: none;
+	box-shadow: 5px 5px 0px 5px var(--cta-bg);
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		max-height: 250px;
+		max-width: 100%;
+		margin-inline: auto;
+	}
+}
+
+.ctaError {
+	margin-right: auto;
+	color: var(--txt);
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	font-weight: 700;
+	font-style: italic;
+
+	@media (max-width: 768px) {
+		margin-inline: auto;
+	}
+}
+
+// ICON ARROW
+// ICON ARROW
+// ICON ARROW
+
+.circle {
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	position: relative;
+	background-color: var(--cta-bg);
+	border-radius: 50%;
+
+	>* {
+		display: inline-block;
+	}
+}
+
+.circle_svg_w {
+	position: absolute;
+	inset: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.circle_svg {
+	position: absolute;
+	inset: 0;
+	height: 100%;
+	width: 100%;
+	background-image: url("/src/assets/svg icons/arrow-right.svg");
+	background-position: center;
+	background-size: 60%;
+	background-repeat: no-repeat;
+}
+
+.circle_svg:first-child {
+	transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
+}
+
+.ctaError:hover .circle_svg:first-child {
+	transition: all 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	transform: translate3d(100%, 0, 0);
+	opacity: 0;
+}
+
+.circle_svg:nth-child(2) {
+	transition: all 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	transform: translate3d(-100%, 0, 0);
+	opacity: 0;
+}
+
+.ctaError:hover .circle_svg:nth-child(2) {
+	transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
+	transform: translateZ(0);
+	opacity: 1;
+}

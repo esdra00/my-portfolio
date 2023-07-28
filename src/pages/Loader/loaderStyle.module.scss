@@ -1,0 +1,23 @@
+.container {
+   height: 100svh;
+   width: 100svw;
+   position: relative;
+   display: flex;
+   align-items: flex-end;
+   justify-content: flex-end;
+   padding: 25px;
+   background-color: var(--cta-bg);
+}
+
+.svg {
+   width: 100px;
+   height: 100px;
+   margin: 20px;
+   display: inline-block;
+
+   @media (max-width: 425px) {
+      height: 50px;
+      width: 50px;
+      margin-inline: 30px;
+   }
+}

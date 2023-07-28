@@ -1,0 +1,41 @@
+@import "src/sass/mixins";
+
+.header {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 1.75%;
+	left: 50px;
+	right: 50px;
+	z-index: +10;
+	transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	@media (max-width: 425px) {
+		right: 15px;
+		left: 15px;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		display: block;
+	}
+
+	@media (max-width: 1024px) {
+		right: 25px;
+		left: 25px;
+	}
+}
+
+.line {
+	@include line;
+}
+
+.logo {
+	z-index: 20;
+}
+
+.logo,
+.header .line {
+	@media (min-width: 426px) and (max-width: 768px) {
+		display: none;
+	}
+}

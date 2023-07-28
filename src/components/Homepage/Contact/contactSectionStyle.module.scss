@@ -1,0 +1,116 @@
+@import "src/sass/mixins";
+
+.section {
+	height: 100svh;
+	min-height: 100svh;
+	width: 100vw;
+	position: relative;
+	padding-inline: 150px;
+	padding-top: 75px;
+	background-color: var(--bg-secondary);
+
+	@media (max-width: 425px) {
+		padding-inline: 15px;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		padding-inline: 30px;
+		padding-top: 20px;
+	}
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+		padding: 75px;
+		padding-bottom: 0;
+	}
+}
+
+.contactBox {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-top: 28px;
+	padding-bottom: 12px;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+	color: var(--card-txt);
+
+	@media (max-width: 425px) {
+		padding-inline: 20px;
+	}
+}
+
+.title {
+	text-align: center;
+	font-size: 50px;
+	line-height: normal;
+
+	@media (max-width: 425px) {
+		font-size: 30px;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		font-size: 35px;
+	}
+}
+
+.desc {
+	text-align: center;
+	max-width: 500px;
+	margin-inline: auto;
+	margin-bottom: 50px;
+	font-size: 16px;
+
+	@media (max-width: 425px) {
+		font-size: 14px;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		padding-inline: 20px;
+	}
+}
+
+footer {
+	font-size: 12px;
+	font-weight: 200;
+	text-align: center;
+
+	.line {
+		@include line;
+		background-color: white;
+		opacity: 50%;
+		margin-inline: auto;
+		margin-bottom: 10px;
+		width: 90%;
+	}
+
+	a {
+		@include link_underline;
+	}
+}
+
+.round_w {
+	height: 150px;
+	width: 100vw;
+	background-color: var(--bg-secondary);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	overflow: hidden;
+}
+
+.round {
+	position: absolute;
+	margin: auto;
+	width: 200%;
+	height: 750%;
+	border-radius: 50%;
+	background-color: var(--bg);
+
+	@media (max-width: 425px) {
+		height: 400%;
+	}
+}

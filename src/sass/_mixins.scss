@@ -1,0 +1,119 @@
+@mixin section {
+	/* eliminates ui elements on mobile */
+	height: 100svh;
+	min-height: 100svh;
+	width: 100vw;
+	position: relative;
+	padding-inline: 150px;
+	padding-block: 75px;
+	background-color: var(--bg);
+
+	@media (max-width: 425px) {
+		padding-inline: 15px;
+		padding-block: 40px;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		padding-inline: 30px;
+		padding-block: 20px;
+	}
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+		padding: 75px;
+	}
+}
+
+@mixin container($flex-direction: column) {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: $flex-direction;
+	padding: 50px;
+}
+//101
+@mixin card {
+	background-color: var(--card-bg);
+	color: var(--card-txt);
+}
+
+@mixin link_underline {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		height: 2px;
+		bottom: -5px;
+		left: 0;
+		background-color: var(--cta-bg);
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-out;
+	}
+
+	&:hover::after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+}
+
+@mixin line($height: 2px, $width: 100%) {
+	height: $height;
+	width: $width;
+	margin-inline: 30px;
+	background-image: linear-gradient(var(--bg) 50%, var(--bg-secondary) 50%);
+	// background-color: var(--cta-bg);
+
+	@media (max-width: 425px) {
+		margin-inline: 10px;
+	}
+}
+
+@mixin titleSection($margin-bottom) {
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+	margin-bottom: $margin-bottom;
+}
+
+@mixin image($border-radius: 15px) {
+	height: auto;
+	width: 100%;
+	aspect-ratio: auto;
+	border-radius: $border-radius;
+	border: 1px solid var(--txt);
+	box-shadow: 5px 5px 0px 5px var(--txt);
+
+	// &:hover {
+	// 	border-color: var(--cta-bg);
+	// 	box-shadow: 5px 5px 0px 5px var(--cta-bg);
+	// }
+	@media (min-width: 769px) {
+		transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+}
+
+@mixin cta {
+	display: block;
+	margin-top: 50px;
+	padding: 10px 25px;
+	border: 1px solid var(--txt);
+	border-radius: 15px;
+	font-size: 12px;
+	text-transform: uppercase;
+
+	&:hover {
+		border-color: var(--bg);
+		background-color: var(--cta-bg);
+		color: var(--txt-secondary);
+	}
+
+	@media (max-width: 425px) {
+		margin-top: 30px;
+	}
+}

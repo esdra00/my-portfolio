@@ -1,0 +1,64 @@
+@import "src/sass/mixins";
+
+.section {
+	@include section;
+	height: auto;
+
+	@media (min-width: 1440px) {
+		padding-inline: 235px;
+	}
+}
+
+.container {
+	@include container;
+	padding: 0;
+	gap: 100px;
+	align-items: center;
+
+	@media (max-width: 425px) {
+		padding: 10px;
+		gap: 50px;
+	}
+
+	// @media (min-width: 426px) and (max-width: 650px) {
+	// 	flex-direction: row;
+	// 	flex-wrap: wrap;
+	// 	gap: 30px;
+	// }
+}
+
+.title {
+	@include titleSection(50px);
+
+	flex-direction: column;
+
+	h2 {
+		font-size: 60px
+	}
+}
+
+.line {
+	@include line;
+}
+
+.cta {
+	display: block;
+	padding: 10px 25px;
+	margin-top: 70px;
+	margin-inline: auto;
+	border: 1px solid var(--txt);
+	border-radius: 10px;
+	font-size: 13px;
+	text-transform: uppercase;
+
+	&:hover {
+		cursor: pointer;
+		border-color: var(--bg);
+		background-color: var(--cta-bg);
+		color: var(--txt-secondary);
+	}
+
+	@media (max-width: 425px) {
+		margin-top: 30px;
+	}
+}

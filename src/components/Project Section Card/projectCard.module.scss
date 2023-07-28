@@ -1,0 +1,155 @@
+@import "src/sass/mixins";
+
+.container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	@media (max-width: 425px) {
+		width: auto;
+		max-width: 300px;
+		padding: 0px;
+		border-radius: 10px;
+		flex-direction: column-reverse !important; //101 !important to override reverse card style
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		max-width: 400px;
+		flex-direction: column-reverse;
+	}
+
+	@media (min-width: 1440px) {
+		gap: 100px;
+	}
+}
+
+.reverse {
+	flex-direction: row-reverse;
+	text-align: right;
+
+	ul {
+		flex-direction: row-reverse;
+		text-align: right;
+	}
+
+	.image {
+		box-shadow: -5px 5px 0px 5px var(--txt);
+
+		@media (max-width: 425px) {
+			box-shadow: none;
+		}
+
+		@media (min-width: 426px) and (max-width: 768px) {
+			box-shadow: 5px 5px 0px 5px var(--txt);
+		}
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		flex-direction: column-reverse;
+	}
+}
+
+.txt_w {
+	max-height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	flex: 1;
+
+	>.line {
+		@include line;
+		height: 1px;
+		background-color: var(--txt);
+		background-image: none;
+		margin: 0;
+	}
+
+	@media (max-width: 425px) {
+		flex: auto;
+	}
+
+	@media (max-width: 768px) {
+		align-items: center;
+		text-align: center;
+	}
+}
+
+.linkTitle {
+	color: var(--txt);
+	display: flex;
+	align-items: center;
+
+	h3 {
+		display: inline;
+		margin-right: 5px;
+	}
+
+	&:hover {
+		color: var(--cta-bg);
+	}
+}
+
+.image_w {
+	text-align: center;
+	flex: 0.9;
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+		flex: 0.7;
+	}
+
+	@media (min-width: 1440px) {
+		flex: 0.7;
+	}
+}
+
+.framework_list {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 15px;
+	row-gap: 5px;
+
+	@media (max-width: 425px) {
+		justify-content: center;
+		row-gap: 5px;
+		column-gap: 10px;
+	}
+}
+
+.framework {
+	padding: 4px 8px;
+	border-radius: 5px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	background-color: transparent;
+	color: var(--txt);
+	border: 1px solid var(--txt);
+	font-weight: normal;
+
+	@media (max-width: 425px) {
+		font-size: 10px;
+	}
+}
+
+.image {
+	@include image(5px);
+	border: none;
+	// already in mixins ???
+	// transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+	// &:hover {
+	// 	transform: scale(1.05);
+	// }
+
+	@media (max-width: 425px) {
+		height: auto;
+		width: 100%;
+		flex: auto;
+		box-shadow: none;
+	}
+
+	@media (min-width: 426px) and (max-width: 768px) {
+		height: auto;
+		width: 100%;
+	}
+}
