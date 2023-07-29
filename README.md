@@ -19,7 +19,7 @@ I started building my portfolio on Figma, after putting togheter my thounghts an
 
 ### Screenshot
 
-![](./screenshot.png)
+![portfolio preview](./Screenshot.png)
 
 ### Links
 
