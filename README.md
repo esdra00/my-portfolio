@@ -1,7 +1,6 @@
 # Esdra Bergamasco - Portfolio
 
-I personally designed every aspect of this portfolio using Figma, the industry-leading design tool. This platform serves as a showcase of my expertise as a Front-End Web Developer, encompassing a collection of carefully curated projects that I consider worth showcasing. These projects aim to demonstrate my versatility and proficiency across various domains.
-
+I personally designed and built every aspect of this portfolio using Figma and React. This platform serves as a showcase of my expertise as a Front-End Web Developer, encompassing a collection of carefully curated projects that I consider worth showcasing. These projects aim to demonstrate my versatility and proficiency across various domains.
 
 ## Table of contents
 
