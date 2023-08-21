@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import style from "./navStyle.module.scss";
-import CV from "/src/assets/Esdra_Bergamasco_CV.pdf";
+import CV from "/src/assets/Esdra_Bergamasco_CV_eng.pdf";
 
 export default function Nav({onClick, mobile}) {
 	return (

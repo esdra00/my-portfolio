@@ -3,7 +3,7 @@ import {useRef} from "react";
 import profilePicture from "../../../assets/images/pfp.png";
 import LinkCta from "../../_shared/Link Cta/linkCta";
 import style from "./aboutSectionStyle.module.scss";
-import CV from "/src/assets/Esdra_Bergamasco_CV.pdf"
+import CV from "/src/assets/Esdra_Bergamasco_CV_eng.pdf";
 
 export default function AboutSection() {
 	const ref = useRef(null);
