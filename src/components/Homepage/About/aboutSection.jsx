@@ -58,7 +58,7 @@ export default function AboutSection() {
 						focus.<br></br>After spending a lot of time working on a set
 						of smaller projects with the aim of showing off my skills, I
 						dedicated a considerable amount of time to this website, my
-						portfolio, as a cupiditate.
+						portfolio.
 					</p>
 				</div>
 			</div>
